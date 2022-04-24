@@ -17,15 +17,19 @@ router.get('/home', function (req, res, next) {
 });
 router.get('/about', function (req, res, next) {
     res.render('index', { title: 'About Us', page: 'about', displayName: (0, index_1.UserDisplayName)(req) });
+    res.sendFile(__dirname + '/about');
 });
 router.get('/projects', function (req, res, next) {
     res.render('index', { title: 'Our Projects', page: 'projects', displayName: (0, index_1.UserDisplayName)(req) });
+    res.sendFile(__dirname + '/projects');
 });
 router.get('/services', function (req, res, next) {
     res.render('index', { title: 'Our Services', page: 'services', displayName: (0, index_1.UserDisplayName)(req) });
+    res.sendFile(__dirname + '/services');
 });
 router.get('/contact', function (req, res, next) {
     res.render('index', { title: 'Contact Us', page: 'contact', displayName: (0, index_1.UserDisplayName)(req) });
+    res.sendFile(__dirname + '/contact');
 });
 router.get('/login', function (req, res, next) {
     if (!req.user) {

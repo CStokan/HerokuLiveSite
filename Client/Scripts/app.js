@@ -24,14 +24,30 @@
     }
     function DisplayAboutPage() {
         console.log("About Us Page");
-        $("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph</p>`);
-        $("main").append(`
-        <article>
-            <p id="ArticleParagraph" class="mt-3">This is the Article Paragraph</p>
-            </article>`);
+        let DocumentBody = document.body;
+        let OnurParagraph = document.getElementById("Onur");
+        let CooperParagraph = document.getElementById("Cooper");
+        let OnurDetails = document.createElement("OnurDetails");
+        let OnurDetalsContext = `<h2>Onur Ozkanca</h2>
+        <p>Graduated from Durham College in 2022, Onur is an experienced programmer with a focus on delivering the best possible product to our customers.</p>`;
+        let CooperDetails = document.createElement("CooperDetails");
+        let CooperDetailsContext = `<h2>Cooper Stokan</h2>
+        <p>Graduated from Durham College in 2022, Cooper is an experienced programmer who has a passion for cyber security.</p>`;
+        OnurDetails.innerHTML = OnurDetalsContext;
+        CooperDetails.innerHTML = CooperDetailsContext;
+        OnurParagraph.appendChild(OnurDetails);
+        CooperParagraph.appendChild(CooperDetails);
     }
     function DisplayProjectsPage() {
         console.log("Our Projects Page");
+        let DocumentBody = document.body;
+        let MainContent = document.getElementsByTagName("main")[0];
+        document.getElementsByClassName("featurette-heading")[0].innerHTML = `This Project <span class="text-muted">Working with Javascript</span>`;
+        document.getElementsByClassName("lead")[0].innerHTML = "The website you are looking at currently is one of my favourites I've worked on so far.  Working with Javascript is something I've been looking forward to doing since I started out at Durham College.  This project has made me very excited for the rest of the course.  I enjoy the intuitiveness of the language and also the real time editing that can be so easily done with lite-server.";
+        document.getElementsByClassName("featurette-heading")[1].innerHTML = `My First Project <span class="text-muted">Hello World! - Using Python</span>`;
+        document.getElementsByClassName("lead")[1].innerHTML = "This project will always hold a place near and dear to me, this is the first few lines of code I had ever written.  Since then I was hooked, learning about programming and continuing to do so has had a monumental shift in how I live my life.  I always like to look back at this file and be proud of how far I've come in such little time.";
+        document.getElementsByClassName("featurette-heading")[2].innerHTML = `Drawing Pyramids <span class="text-muted"> Using Python</span>`;
+        document.getElementsByClassName("lead")[2].innerHTML = "This project is one of my favourites because who wouldn't want to create some cool-looking pyramids. It asks the user how big they want their pyramids to be and, the pyramid you wanted is there.";
     }
     function DisplayServicesPage() {
         console.log("Our Services Page");
@@ -66,6 +82,9 @@
         $("a[data='contact-list']").off("click");
         $("a[data='contact-list']").on("click", function () {
             location.href = "/contact-list";
+        });
+        $("button[id='sendButton']").on("click", function () {
+            location.href = "/home";
         });
         ContactFormValidation();
         let sendButton = document.getElementById("sendButton");

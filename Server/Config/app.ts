@@ -78,6 +78,9 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+// Allow images to come through
+app.use(express.static(__dirname + 'Client'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -23,24 +23,28 @@ router.get('/home', function(req, res, next)
 router.get('/about', function(req, res, next) 
 {
   res.render('index', { title: 'About Us', page: 'about', displayName: UserDisplayName(req) });
+  res.sendFile(__dirname + '/about');
 });
 
 /* GET projects page. */
 router.get('/projects', function(req, res, next) 
 {
   res.render('index', { title: 'Our Projects', page: 'projects', displayName: UserDisplayName(req) });
+  res.sendFile(__dirname + '/projects');
 });
 
 /* GET services page. */
 router.get('/services', function(req, res, next) 
 {
   res.render('index', { title: 'Our Services', page: 'services', displayName: UserDisplayName(req) });
+  res.sendFile(__dirname + '/services');
 });
 
 /* GET contact page. */
 router.get('/contact', function(req, res, next) 
 {
   res.render('index', { title: 'Contact Us', page: 'contact', displayName: UserDisplayName(req) });
+  res.sendFile(__dirname + '/contact');
 });
 
 
