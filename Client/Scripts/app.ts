@@ -42,6 +42,13 @@
     function DisplayAboutPage(): void
     {
         console.log("About Us Page");
+        
+        $("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph</p>`);
+
+        $("main").append(`
+        <article>
+            <p id="ArticleParagraph" class="mt-3">This is the Article Paragraph</p>
+            </article>`);
     }
 
     function DisplayProjectsPage(): void
