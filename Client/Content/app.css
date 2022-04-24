@@ -50,3 +50,12 @@
     border-radius: .4em;
     width: 100%;
 }
+
+
+.icon {
+background: url(CustomLogo.png);
+height: 16px;
+width: 16px;
+display: block;
+/* Other styles here */
+}
